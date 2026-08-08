@@ -1,3 +1,14 @@
+/* Default mobile or small screen styles */
+   .container {
+        width: 100%;
+        padding: 15px;
+/* Large screen view at 998px and up */
+@media (min-width: 998px) {
+       .container {
+         width: 960px;
+            margin: 0 auto;
+    }
+}
 
 body {
     background-color: #dedede;
