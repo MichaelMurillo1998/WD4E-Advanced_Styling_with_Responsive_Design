@@ -1,11 +1,24 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<Title>Animals<Title>
+
+<style>
+/*mobile first*/
+html{
+    scroll-behavior:smooth;
+}
+
 body {
+    margin: 20px;
+    font-family:Arial, sans-serif;
     background-color: #dedede;
 }
 
 h1 {
     text-align: center;
-    font-family:Arial, sans-serif;
-    font-size: 32px;
 }
 
 a {
@@ -15,18 +28,135 @@ a {
 }
 
 p {
+    text-align: center;
    font-size: 25px;
    font-family:Arial, sans-serif;
 }
 
+.gallery{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:10px;
+}
+
+figure{
+    margin:0;
+    border:3px solid #444;
+    background:white;
+    padding:10px;
+    text-align:center;
+}
+
 img{
   width:100%;
+  height:250px;
+  object-fit:cover;
+  display:block;
 }
 
-
-p{
-  text-align:center;
+figcaption{
+    margin-top:10px;
+    font-weight:bold;
 }
+
+/* Tablet View */
+@media screen and (min-width:772px){
+
+.gallery{
+    grid-template-columns:repeat(2,1fr);
+}
+
+figure{
+    border-radius:50%;
+    overflow:hidden;
+}
+
+figure:last-child{
+    grid-column:1 / span 2;
+}
+
+}
+
+/* Large Screen View */
+@media screen and (min-width:992px){
+
+figure{
+    border-radius:0;
+}
+
+figure:nth-child(3n){
+    grid-column:1 / span 2;
+}
+
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce){
+
+html{
+    scroll-behavior:auto;
+}
+
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark){
+
+body{
+    background:#111;
+    color:white;
+}
+
+figure{
+    background:#2c2c2c;
+    color:#ffe66d;
+    border-color:black;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<h1>Animal photo gallery<h1>
+
+<p>
+This consists of wild animals that live the forests or safaris;
+however each image will show once you scroll your mouse.
+<p>
+
+<section class="gallery">
+
+<figure>
+<img src="https://i.natgeofe.com/k/e7ba8001-23ac-457f-aedb-abd5f2fdda62/moms5_4x3.png" alt="Mother and Baby Elephant">
+<figcaption>Elephants</figcaption>
+</figure>
+
+<figure>
+<img src="https://www.marylandzoo.org/wp-content/uploads/2017/10/zebra_web-1024x683.jpg" alt="Zebra running">
+<figcaption>Zebra<figcaption>
+</figure>
+
+<figure>
+<img src="https://ogden_images.s3.amazonaws.com/www.sungazette.com/images/2023/10/16141824/17flamingo-834x840.jpg" alt="Flamingo Heart">
+<figcaption>Flamingos<figcaption>
+</figure>
+
+<figure>
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRtmX3zvv57Lsy5YHdZE1jMdxZPf83vsWuR8Rc5tW8nGaL6qyTc8EggGE&s=10" alt="Mother Rhino and Baby Rhino">
+<figcaption>Rhinos<f/igcaption>
+</figure>
+
+<figure>
+<img src="https://cdn.britannica.com/62/142062-050-E51AEF0F/sloth-tree-branch.jpg" alt="Sloth on a tree">
+<figcaption>Sloth</figcaption>
+</figure>
+
+<figure>
+<img src="https://www.northgeorgiazoo.com/uploads/2/8/9/8/2898594/untitled-design-2025-12-17t121307-787_orig.png" alt="Cute Badger">
+<figcaption>Badger</figcaption>
+</figure>
 
 div img{
     width:150px;
